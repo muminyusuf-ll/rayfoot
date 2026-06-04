@@ -11,18 +11,24 @@ body{
     overflow-x:hidden;
     position:relative;
 
-    background-image:url("desktop-bg.jpg");
+    background-image:url("mobile-bg.jpg");
     background-size:cover;
     background-position:center;
-    background-repeat:no-repeat;
+    background-attachment:fixed;
 }
 
-/* خلفية الهاتف */
-@media (max-width:768px){
+/* خلفية الكمبيوتر */
+
+@media (min-width:768px){
+
     body{
-        background-image:url("mobile-bg.jpg");
+        background-image:url("desktop-bg.jpg");
     }
+
 }
+
+/* طبقة تعتيم */
+
 body::after{
 
     content:"";
