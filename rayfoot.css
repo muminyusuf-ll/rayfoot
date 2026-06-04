@@ -10,18 +10,47 @@ body{
     min-height:100vh;
     overflow-x:hidden;
     position:relative;
+}
+
+/* خلفية ثابتة بطريقة آمنة للآيفون */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
 
     background-image:url("desktop-bg.jpg");
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
+
+    z-index:-2;
 }
 
-/* خلفية الهاتف */
+/* طبقة للهاتف */
+
 @media (max-width:768px){
-    body{
+    body::before{
         background-image:url("mobile-bg.jpg");
+        background-size:cover;
+        background-position:center;
     }
+}
+
+/* تعتيم خفيف */
+
+body::after{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.35);
+    z-index:-1;
 }
 
 /* طبقة تعتيم */
